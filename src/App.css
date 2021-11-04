@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+:root {
+	--gainsboro: #e0e0e2ff;
+	--middle-blue-green: #81d2c7ff;
+	--light-periwinkle: #b5bad0ff;
+	--shadow-blue: #7389aeff;
+	--queen-blue: #416788ff;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+	background-color: var(--light-periwinkle);
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+.container {
+	width: 80vw;
+	max-width: 1170px;
+	justify-content: center;
+	margin: 2rem auto;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	display: grid;
+	gap: 1rem;
 }
-
-.App-link {
-  color: #61dafb;
+.card {
+	background-color: var(--shadow-blue);
+	padding: 1rem 2rem;
+	border-radius: 1rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card img {
+	display: block;
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+}
+.card h3,
+.card p {
+	color: var(--light-periwinkle);
+}
+@media screen and (min-width: 640px) {
+	.container {
+		grid-template-columns: repeat(2, 1fr);
+		justify-content: space-between;
+	}
+}
+@media screen and (min-width: 863px) {
+	.container {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
